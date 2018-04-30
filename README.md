@@ -1,9 +1,9 @@
-# Create-Env
+# :rocket: Create-Env :rocket: 
 [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://travis-ci.org/BlackBoxVision/create-env.svg?branch=master)](https://travis-ci.org/BlackBoxVision/create-env) [![Coverage Status](https://coveralls.io/repos/github/BlackBoxVision/create-env/badge.svg?branch=master)](https://coveralls.io/github/BlackBoxVision/create-env?branch=master) [![codecov](https://codecov.io/gh/BlackBoxVision/create-env/branch/master/graph/badge.svg)](https://codecov.io/gh/BlackBoxVision/create-env) 
 ![npm](https://img.shields.io/npm/dm/create-env.svg)
 
 
-:rocket: `create-env` is an utility to help you create .env files based on CI/CD environmental values. 
+`create-env` is an utility to help you create .env files based on CI/CD environmental values. 
 
 ## Use case
 
@@ -31,9 +31,9 @@ NODE_ENV=production
 PORT=8080
 ```
 
-## Install 
+## Installation
 
-Install as a global dependency: 
+`create-env` needs to be installed as a global dependency: 
 
 ### NPM
 
