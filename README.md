@@ -1,5 +1,5 @@
 # :rocket: Create-Env :rocket: 
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://travis-ci.org/BlackBoxVision/create-env.svg?branch=master)](https://travis-ci.org/BlackBoxVision/create-env) [![Coverage Status](https://coveralls.io/repos/github/BlackBoxVision/create-env/badge.svg?branch=master)](https://coveralls.io/github/BlackBoxVision/create-env?branch=master) [![codecov](https://codecov.io/gh/BlackBoxVision/create-env/branch/master/graph/badge.svg)](https://codecov.io/gh/BlackBoxVision/create-env) 
+[![NPM Version](https://img.shields.io/npm/v/create-env.svg?maxAge=2592000)](https://img.shields.io/npm/v/create-env.svg?maxAge=2592000) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://travis-ci.org/BlackBoxVision/create-env.svg?branch=master)](https://travis-ci.org/BlackBoxVision/create-env) [![Coverage Status](https://coveralls.io/repos/github/BlackBoxVision/create-env/badge.svg?branch=master)](https://coveralls.io/github/BlackBoxVision/create-env?branch=master) [![codecov](https://codecov.io/gh/BlackBoxVision/create-env/branch/master/graph/badge.svg)](https://codecov.io/gh/BlackBoxVision/create-env) 
 ![npm](https://img.shields.io/npm/dm/create-env.svg)
 
 
