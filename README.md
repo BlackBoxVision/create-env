@@ -71,9 +71,11 @@ npx create-env --env testing --env-file .env --use-default-prefix
 
 ## TODO
 
+- [ ] Add `--from-template` option. (In order to support .env generation based on another .env file).
 - [ ] Add `--no-prefix` option. (In order to support generate a .env file with all the env variables).
 - [ ] Add `--type` option. (In order to support other formats like JSON envs).
 - [ ] Add `--help` option. 
+
 ## Issues
 
 If you raise a bug, please, open an [issue](https://github.com/BlackBoxVision/create-env/issues).
