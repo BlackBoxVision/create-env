@@ -1,0 +1,14 @@
+sudo: false
+language: node_js
+node_js:
+  - stable
+cache:
+  directories:
+    - node_modules
+branches:
+  only:
+    - master
+after_success:
+  - npm run coverage
+  - cat ./coverage/lcov.info | node_modules/.bin/coveralls --verbose
+  - bash <(curl -s https://codecov.io/bash)

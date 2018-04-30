@@ -6,7 +6,8 @@
   "main": "./src/createEnv.js",
   "bin": "./index.js",
   "scripts": {
-    "test": "nyc --reporter=text-summary mocha"
+    "test": "nyc --reporter=text-summary mocha",
+    "coverage": "nyc --reporter=lcov mocha"
   },
   "repository": {
     "type": "git",
