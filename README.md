@@ -1,4 +1,4 @@
-# Create-Env [![Build Status](https://travis-ci.org/BlackBoxVision/create-env.svg?branch=master)](https://travis-ci.org/BlackBoxVision/create-env)
+# Create-Env [![Build Status](https://travis-ci.org/BlackBoxVision/create-env.svg?branch=master)](https://travis-ci.org/BlackBoxVision/create-env) [![Coverage Status](https://coveralls.io/repos/github/BlackBoxVision/create-env/badge.svg?branch=master)](https://coveralls.io/github/BlackBoxVision/create-env?branch=master) [![codecov](https://codecov.io/gh/BlackBoxVision/create-env/branch/master/graph/badge.svg)](https://codecov.io/gh/BlackBoxVision/create-env)
 
 `create-env` is an utility to help you create .env files based on CI/CD environmental values. 
 
