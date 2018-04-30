@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "commander": "^2.15.1"
+    "commander": "^2.15.1",
+    "coveralls": "^3.0.0"
   }
 }

@@ -1,4 +1,4 @@
-# Create-Env
+# Create-Env [![Build Status](https://travis-ci.org/BlackBoxVision/create-env.svg?branch=master)](https://travis-ci.org/BlackBoxVision/create-env)
 
 `create-env` is an utility to help you create .env files based on CI/CD environmental values. 
 
