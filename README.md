@@ -3,13 +3,33 @@
 ![npm](https://img.shields.io/npm/dm/create-env.svg)
 
 
-`create-env` is an utility to help you create .env files based on CI/CD environmental values. 
-
-This utility runs over `nodejs`, so `nodejs` installation is required for its usage.
+:rocket: `create-env` is an utility to help you create .env files based on CI/CD environmental values. 
 
 ## Use case
 
 You use Gitlab-CI/CD or another CI/CD to perform a build of a software artifact and you want to use the provided CI/CD secret variables as a `.env` file. This is where `create-env` comes to the rescue. 
+
+## How it Works
+
+You have defined your secret-variables inside of the CI/CD, and your variables uses a prefix like `DEV_`, `TEST_`, `PROD_`. `create-env` will take the current environment for your CI/CD pipeline, a prefix related to that environment, and the name of the file you want as output. 
+
+Then, it will generate that .env file, and remove the `prefix` of each secret-variable.
+
+e.g: 
+
+- `Your secret-variables`:
+
+```shell
+TEST_NODE_ENV=production
+TEST_PORT=8080
+````
+
+- `Your .env file output`:
+
+```shell
+NODE_ENV=production
+PORT=8080
+```
 
 ## Install 
 
@@ -17,19 +37,52 @@ Install as a global dependency:
 
 ### NPM
 
-`npm i -g create-env`
+```shell
+npm i -g create-env
+```
 
 ### YARN
 
-`yarn global add create-env`
+```shell
+yarn global add create-env
+```
 
-## Usage
+## Creating a .env file
 
-Default usage: 
-`create-env --env testing --env-prefix TEST_ --env-file .env`
+To create a `.env file` you have to run `create-env` with the following parameters:
 
-With Default Prefix:
-`create-env --env testing --env-file .env --use-default-prefix`
+```shell
+# Default
+create-env --env-file .env --env-prefix TEST_
 
-With debug options enabled:
-`create-env --env testing --env-file .env --debug`
+# NPX
+npx create-env --env-file .env --env-prefix TEST_
+```
+
+`create-env` comes with a set of default prefixes (`DEV_`, `TEST_`, `PROD_`), if your secret-variables use those default prefixes, you can run `create-env` with the following parameters, the only thing your have to pass is the `env` which can be one of `development`, `testing` or `production`:
+
+```shell
+# Default
+create-env --env testing --env-file .env --use-default-prefix
+
+# NPX
+npx create-env --env testing --env-file .env --use-default-prefix
+``` 
+
+## TODO
+
+- [ ] Add `--no-prefix` option. This is for the case that you only want to generate a .env file.
+- [ ] Add `--type` option. This is for the case that you want the output to be a `JSON/TEXT` file.
+- [ ] Add `--help` option. This is to display friendly the possible combinat33#ions.
+
+## Issues
+
+If you raise a bug, please, open an [issue](https://github.com/BlackBoxVision/create-env/issues).
+
+## Contributing
+
+PRs are welcome. Any kind of contribution is welcome. 
+
+## License
+
+`create-env` is licensed as [MIT](https://github.com/BlackBoxVision/create-env/blob/master/LICENSE).
