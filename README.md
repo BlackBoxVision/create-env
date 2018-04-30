@@ -71,10 +71,9 @@ npx create-env --env testing --env-file .env --use-default-prefix
 
 ## TODO
 
-- [ ] Add `--no-prefix` option. This is for the case that you only want to generate a .env file.
-- [ ] Add `--type` option. This is for the case that you want the output to be a `JSON/TEXT` file.
-- [ ] Add `--help` option. This is to display friendly the possible combinat33#ions.
-
+- [ ] Add `--no-prefix` option. (In order to support generate a .env file with all the env variables).
+- [ ] Add `--type` option. (In order to support other formats like JSON envs).
+- [ ] Add `--help` option. 
 ## Issues
 
 If you raise a bug, please, open an [issue](https://github.com/BlackBoxVision/create-env/issues).
