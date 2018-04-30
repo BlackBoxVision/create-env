@@ -1,52 +1,25 @@
 const fs = require('fs');
-const chalk = require('chalk');
 
 const env = require('./env');
+const { createKeyFilter, log, getEnv } = require('./utils');
 
-const createKeyFilter = str => key => key.startsWith(str);
+const createEnv = (processEnv, { debug, name, fileName, prefix, useDefaultPrefix }) => {
+    const envPrefix = useDefaultPrefix ? env.get(name) : prefix;
 
-const createEnv = (processEnv, options) => {
-    if (options.debug) {
-        console.info(chalk.yellow(`Debug mode is enabled.`));
-    }
+    log(`Creating ${fileName} file with the following options:`, debug, 'yellow');
 
-    let envPrefix = null;
+    log(`env: ${name}`, debug);
+    log(`env-file: ${fileName}`, debug);
+    log(`env-prefix: ${envPrefix}`, debug);
+    log(`use-default-prefix: ${useDefaultPrefix}`, debug);
 
-    if (options.useDefaultPrefix) {
-        envPrefix = env.get(options.envName);
-    } else {
-        envPrefix = options.envPrefix;
-    }
+    const envStr = getEnv(processEnv, envPrefix);
 
-    if (options.debug) {
-        console.info(chalk.yellow(`Creating ${options.envFileName} file with the following options:`));
+    log(`Environment values:\r\n${envStr}`, debug);
 
-        console.info(chalk.green(`env: ${options.envName}`));
-        console.info(chalk.green(`env-file: ${options.envFileName}`));
-        console.info(chalk.green(`env-prefix: ${envPrefix}`));
-        console.info(chalk.green(`use-default-prefix: ${options.useDefaultPrefix}`));
-    }
+    fs.appendFileSync(`${process.cwd()}/${fileName}`, envStr);
 
-    const envKeys = Object.keys(processEnv);
-    const envReducer = (str, key) => {
-        const envKey = key.replace(envPrefix, '');
-        const envValue = processEnv[key];
-
-        return str + `${envKey}=${envValue} \r\n`;
-    };
-
-    const envValues = envKeys.filter(createKeyFilter(envPrefix));
-    const envStr = envValues.reduce(envReducer, '');
-
-    if (options.debug) {
-        console.info(chalk.yellow(`Environment values: ${envStr}`));
-    }
-
-    fs.appendFileSync(`${process.cwd()}/${options.envFileName}`, envStr);
-
-    if (options.debug) {
-        console.info(chalk.yellow(`File ${options.envFileName} was created successfully.`));
-    }
+    log(`File ${fileName} was created successfully.`, debug, 'yellow');
 };
 
 module.exports = createEnv;

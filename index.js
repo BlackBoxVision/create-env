@@ -1,29 +1,27 @@
 #!/usr/bin/env node
 'use strict';
 
-const chalk = require('chalk');
 const Commander = require('commander');
-const exec = require('child_process').exec;
 
-const pkg = require('./package.json');
-const createEnv = require('./src/createEnv');
+const packageJson = require('./package.json');
+const createEnvFromProcessVars = require('./src/createEnv');
 
-const commandLine = new Commander.Command(pkg.name);
+const createEnv = new Commander.Command(packageJson.name);
 
-commandLine
-    .version(pkg.version)
-    .description(pkg.description)
-    .option('-e, --env [value]')
-    .option('-f, --env-file [value]')
-    .option('-p, --env-prefix [value]')
-    .option('-u, --use-default-prefix')
-    .option('-d, --debug')
+createEnv
+    .version(packageJson.version)
+    .description(packageJson.description)
+    .option('--env [value]')
+    .option('--env-file [value]')
+    .option('--env-prefix [value]')
+    .option('--use-default-prefix')
+    .option('--debug')
     .parse(process.argv);
 
-createEnv(process.env, {
-    debug: commandLine.debug,
-    envName: commandLine.env,
-    envPrefix: commandLine.envPrefix,
-    envFileName: commandLine.envFile,
-    useDefaultPrefix: commandLine.useDefaultPrefix
+createEnvFromProcessVars(process.env, {
+    name: createEnv.env,
+    debug: createEnv.debug,
+    prefix: createEnv.envPrefix,
+    fileName: createEnv.envFile,
+    useDefaultPrefix: createEnv.useDefaultPrefix
 });

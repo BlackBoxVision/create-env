@@ -7,11 +7,11 @@ const runCreateEnvTestForEnv = (currentEnv, options) => {
     loadEnv(currentEnv);
 
     createEnv(process.env, {
-        envName: currentEnv,
-        envPrefix: EnvPrefixes[currentEnv.toUpperCase()],
-        envFileName: `${currentEnv}.env`,
+        name: currentEnv,
+        debug: options.debug,
+        fileName: `${currentEnv}.env`,
         useDefaultPrefix: options.useDefaultPrefix,
-        debug: options.debug
+        prefix: EnvPrefixes[currentEnv.toUpperCase()]
     });
 
     checkEnv(currentEnv, env => {
