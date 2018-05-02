@@ -1,5 +1,5 @@
 # :rocket: Create-Env :rocket: 
-[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://travis-ci.org/BlackBoxVision/create-env.svg?branch=master)](https://travis-ci.org/BlackBoxVision/create-env) [![Coverage Status](https://coveralls.io/repos/github/BlackBoxVision/create-env/badge.svg?branch=master)](https://coveralls.io/github/BlackBoxVision/create-env?branch=master) [![codecov](https://codecov.io/gh/BlackBoxVision/create-env/branch/master/graph/badge.svg)](https://codecov.io/gh/BlackBoxVision/create-env) 
+[![NPM Version](https://img.shields.io/npm/v/create-env.svg?maxAge=2592000)](https://img.shields.io/npm/v/create-env.svg?maxAge=2592000) [![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](https://opensource.org/licenses/MIT)  [![Build Status](https://travis-ci.org/BlackBoxVision/create-env.svg?branch=master)](https://travis-ci.org/BlackBoxVision/create-env) [![Coverage Status](https://coveralls.io/repos/github/BlackBoxVision/create-env/badge.svg?branch=master)](https://coveralls.io/github/BlackBoxVision/create-env?branch=master) [![codecov](https://codecov.io/gh/BlackBoxVision/create-env/branch/master/graph/badge.svg)](https://codecov.io/gh/BlackBoxVision/create-env) 
 ![npm](https://img.shields.io/npm/dm/create-env.svg)
 
 
@@ -71,9 +71,10 @@ npx create-env --env testing --env-file .env --use-default-prefix
 
 ## TODO
 
-- [ ] Add `--no-prefix` option. This is for the case that you only want to generate a .env file.
-- [ ] Add `--type` option. This is for the case that you want the output to be a `JSON/TEXT` file.
-- [ ] Add `--help` option. This is to display friendly the possible combinat33#ions.
+- [ ] Add `--from-template` option. (In order to support .env generation based on another .env file).
+- [ ] Add `--no-prefix` option. (In order to support generate a .env file with all the env variables).
+- [ ] Add `--type` option. (In order to support other formats like JSON envs).
+- [ ] Add `--help` option. 
 
 ## Issues
 
